@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md bg-warning navbar-dark">
+  <a class="navbar-brand" (click)='my()'>Trango Labs HRM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" (click)='toggleber()'>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar" [ngClass]="{'show':navbarOpen}">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="sigin()">Sigin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)='sigup()'>Sigup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)='my()'>Home</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+<div class="container-fluid">
+ <div class="row">
+   <div class="col-md-12">
+     
+   </div>
+ </div>
+</div>
+<router-outlet>
+
+</router-outlet>

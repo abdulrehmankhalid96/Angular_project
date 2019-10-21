@@ -1,0 +1,12 @@
+mat-sidenav-container{
+    height: 100%;
+    overflow: hidden;
+}
+mat-sidenav,mat-sidenav-content{
+    padding:16px;
+}
+mat-sidenav{
+    background-color: purple;
+    width: 20%;
+    overflow: hidden;
+}

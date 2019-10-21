@@ -1,0 +1,281 @@
+<button (click)='visiable()' class="btn btn-success mt-3">+Add Employee</button>
+<div class="container-fluid " *ngIf='!isCollapsed'>
+   <h4 class="text-center">Employee Records Form</h4>
+   <form #employeform="ngForm" (ngSubmit)='submitfun()'>
+      <table class="table table-striped">
+
+         <tbody>
+            <tr class="row">
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Date:</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-user"></i></span><input id="Date" name="Date" 
+                                 placeholder="Date" class="form-control" required="true" value="" type="date" ngModel></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Employee First name</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-home"></i></span><input id="firstname" name="firstname"
+                                 placeholder="First Name" class="form-control" required="true" value="" type="text" ngModel>
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Employee Last name</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-home"></i></span><input id="last name" name="lastname"
+                                 placeholder="Last name" class="form-control" required="true" value="" type="text" ngModel>
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+            </tr>
+
+
+            <tr class="row">
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">SIN No:</label>
+                        <div class="inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-home"></i></span><input id="SIN" name="SIN"
+                                 placeholder="SIN No" class="form-control" required="true" value="" type="number" ngModel></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="control-label">Full Address</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-home"></i></span><input id="Address" name="Address"
+                                 placeholder="State/Province/Region" class="form-control" required="true" value=""
+                                 type="text" ngModel></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Pay Type</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-home"></i></span>
+                              <select class="custom-select ">
+                                 <option selected>Pay Type</option>
+                                 <option *ngFor='let py of pay'>{{py}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+            </tr>
+
+            <tr class="row">
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Phone Number</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber"
+                                 name="phoneNumber" placeholder="Phone Number" class="form-control" required="true"
+                                 value="" type="tel" ngModel></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Employee No</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-earphone"></i></span><input id="Employee No"
+                                 name="Employee No" placeholder="Employee No" class="form-control" required="true"
+                                 value="" type="numberModel" ng ></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Employee Category</label>
+                        <div class="inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-earphone"></i></span>
+                              <select class="custom-select ">
+                                 <option selected>Employee Catagorey</option>
+                                 <option *ngFor='let catagory of catagorey'>{{catagory}}</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+            </tr>
+
+            <tr class="row">
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Sales Incentive</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-earphone"></i></span><input id="Incentive"
+                                 name="Incentive" placeholder="Incentive" class="form-control" required="true" value=""
+                                 type="text" ngModel></div>
+                        </div>
+                     </div> 
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Collector license No</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-earphone"></i></span><input id="license" name="license"
+                                 placeholder="Collector license No" class="form-control" required="true" value=""
+                                 type="text" ngModel></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Hourly Rate</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group">
+                              <span class="input-group-addon" style="max-width: 100%;"><i
+                                    class="glyphicon glyphicon-list"></i></span>
+                              <input id=" Rate" name=" Rate" placeholder="Hourly Rate" class="form-control"
+                                 required="true" value="" type="number" ngModel>
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+            </tr>
+
+            <tr class="row">
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">Yearly Salary</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-envelope"></i></span><input id="Yearly Salary"
+                                 name="Yearly Salary" placeholder="Yearly Salary" class="form-control" required="true"
+                                 value="" type="number" ngModel></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group">
+                        <label class=" control-label">File Closed status</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-earphone"></i></span><input id="fileStatus"
+                                 name="fileStatus" placeholder="File Status " class="form-control" required="true"
+                                 value="" type="text" ngModel></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+               <td class="col-md-4" colspan="1">
+
+                  <fieldset>
+                     <div class="form-group mb-5">
+                        <label class=" control-label">List of Files Assigned</label>
+                        <div class=" inputGroupContainer">
+                           <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-earphone"></i></span><input id="fileList" name="fileList"
+                                 placeholder="List of Files Assigned" class="form-control" required="true" value=""
+                                 type="number"></div>
+                        </div>
+                     </div>
+                  </fieldset>
+
+               </td>
+            </tr>
+
+         </tbody>
+         <tr>
+            <td>
+               <button type="submit" class="btn btn-info">Submitt</button>
+               <button class="btn btn-warning ml-3" type="button" (click)='hide()'>Cancel</button>
+            </td>
+         </tr>
+      </table>
+   </form>
+</div>
+
+<div class="container-fluid mt-5">
+      <button style="text-align: right;" (click)='table()'>Complete Table</button>
+   <table class="table">
+      
+      <thead>
+         <tr class="row">
+            <th class="col-md-2">Employee No</th>
+            <th class="col-md-2">Employee Name</th>
+            <th class="col-md-2">SIN No</th>
+            <th class="col-md-2">Pay Type</th>
+            <th class="col-md-2">Phone Number</th>
+            <th class="col-md-2">Address</th>
+         </tr>
+      </thead>
+   </table>
+</div>
